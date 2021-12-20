@@ -7,8 +7,8 @@ import (
 
 type MavenRule struct {
 	gorm.Model
-	groupIDPrefix string
-	inheritance   bool
+	GroupIDPrefix string
+	Inheritance   bool
 	License       *model.License `gorm:"foreignKey:LicenseID"`
 	LicenseID     *uint
 }

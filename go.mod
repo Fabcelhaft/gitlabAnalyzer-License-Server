@@ -1,8 +1,12 @@
-module gitlabAnalyzer-License-Server
+module github.com/fabcelhaft/gitlabAnalyzer-License-Server
 
 go 1.17
 
-require github.com/kikkirej/gitlab-analyzer v0.0.0-20211114153747-f8204cf0f9bd
+require (
+	github.com/kikkirej/gitlab-analyzer v0.0.0-20211115124101-1cba466f9efc
+	github.com/mitchellh/go-spdx v0.1.0
+	gorm.io/gorm v1.21.13
+)
 
 require (
 	github.com/golang/protobuf v1.3.2 // indirect
@@ -27,5 +31,4 @@ require (
 	golang.org/x/time v0.0.0-20191024005414-555d28b269f0 // indirect
 	google.golang.org/appengine v1.4.0 // indirect
 	gorm.io/driver/postgres v1.1.0 // indirect
-	gorm.io/gorm v1.21.13 // indirect
 )

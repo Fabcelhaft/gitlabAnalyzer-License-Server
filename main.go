@@ -1,17 +1,15 @@
 package main
 
 import (
-	"fmt"
-	"github.com/kikkirej/gitlab-analyzer/settings"
-	"gitlabAnalyzer-License-Server/db"
+	"github.com/fabcelhaft/gitlabAnalyzer-License-Server/db"
+	"github.com/fabcelhaft/gitlabAnalyzer-License-Server/rule_handling"
 	"time"
 )
 
 func main() {
-	for settings.Struct.DBInitialized == false {
-		time.Sleep(time.Second)
-	}
-	fmt.Println(db.GetMavenRootElementNames())
-	fmt.Println(db.GetMavenChildElementNames(3, "de.comline"))
-	fmt.Println(db.GetArtifactsInGroup("de.comline"))
+	//REST öffnen
+	//Job zum refreshen starten
+	time.Sleep(2* time.Second)
+	db.GetMavenRuleForGroupID("org.apache.logging.log4j")
+	rule_handling.UpdateMavenLicenses()
 }
